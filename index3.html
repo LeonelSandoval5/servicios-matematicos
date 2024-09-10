@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rinle Matemáticas - Soluciones Matemáticas a tu Alcance</title>
+  <meta name="description" content="En Rinle Matemáticas, ofrecemos soluciones efectivas y personalizadas para tus desafíos matemáticos. Descubre nuestros servicios, precios y más.">
+  <meta name="keywords" content="matemáticas, asesoría matemática, tutorías, servicios matemáticos, educación">
+  <meta name="robots" content="index, follow">
+	<style>
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif; /* Fuente legible */
+    background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff); /* Gradiente suave de azul claro */
+    color: #222; /* Gris más oscuro para el texto */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el contenedor de pestañas */
+.tabs {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Añadir margen para centrar */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #ffffff; /* Fondo blanco para las pestañas */
+}
+
+/* Estilo para los títulos de las pestañas */
+.tab-titles {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-bottom: 2px solid #ccc; /* Línea debajo de los títulos */
+}
+
+.tab-titles li {
+    flex: 1;
+    min-width: 100px;
+}
+
+.tab-titles a {
+    display: block;
+    padding: 10px;
+    background-color: #f1f1f1; /* Fondo claro para los enlaces */
+    color: #333; /* Texto oscuro */
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px; /* Bordes redondeados para los enlaces */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.tab-titles a.active,
+.tab-titles a:hover {
+    background-color: #ccc; /* Color al pasar el mouse o activo */
+}
+
+/* Estilo para el contenido de las pestañas */
+.tab-contents {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none; /* Sin borde superior para unir con los títulos */
+}
+
+.tab-contents li {
+    display: none; 
+}
+
+.tab-contents li.active {
+    display: block; /* Mostrar contenido activo */
+}
+
+/* Estilo para los encabezados dentro del contenido */
+h1 {
+    color: #0056b3; /* Color azul para los encabezados */
+}
+
+h2 {
+    color: #0056b3; /* Color azul para los encabezados */
+}
+
+/* Estilo para los párrafos */
+p {
+    line-height: 1.6; /* Espaciado entre líneas para facilitar la lectura */
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start; /* Alinea el punto y el texto al inicio */
+    margin-bottom: 20px; /* Espaciado entre elementos */
+}
+
+.dot-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; /* Ancho del contenedor del punto */
+    height: 20px; /* Alto del contenedor del punto */
+    margin-right: 10px; /* Espaciado entre el punto y el texto */
+}
+
+.dot {
+    width: 10px; /* Tamaño del punto */
+    height: 10px; /* Tamaño del punto */
+    background-color: #0056b3; /* Color del punto */
+    border-radius: 50%; /* Hace que el punto sea redondo */
+}
+
+.text {
+    flex: 1;  
+}
+
+.container {
+    display: flex; /* Usamos flexbox para alinear el contenido */
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0 20px; /* Espacio lateral opcional */
+}
+
+.texto {
+    margin-bottom: 10px; /* Espacio entre el texto y el botón */
+}
+
+.donation-button {
+    background-color: #008000; /* Verde claro para el botón */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0; /* Reduce el margen superior e inferior */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+.donation-button:hover {
+    background-color: #006400; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .tabs {
+        margin: 10px; /* Reduce el margen para pantallas más pequeñas */
+    }
+
+    .tab-titles {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .tab-titles li {
+        min-width: auto; /* Permite que el ancho mínimo se ajuste */
+    }
+
+    .tab-titles a {
+        padding: 15px; /* Aumenta el padding para mejor clicabilidad */
+    }
+
+    .tab-contents {
+        padding: 15px; /* Reduce el padding en el contenido */
+    }
+
+    .donation-button {
+        width: 100%; /* Botón ocupa el 100% del ancho en pantallas pequeñas */
+        padding: 15px; /* Aumenta el padding para mejor clicabilidad */
+    }
+
+    .container {
+        padding: 0 10px; /* Reduce el padding lateral */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em; /* Ajusta el tamaño de los encabezados */
+    }
+
+    h2 {
+        font-size: 1.2em; /* Ajusta el tamaño de los encabezados */
+    }
+
+    p {
+        font-size: 0.9em; /* Reduce el tamaño de la fuente de los párrafos */
+    }
+
+    .donation-button {
+        padding: 10px; /* Ajusta el padding del botón */
+    }
+}
+
+    </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var tabTitles = document.querySelector('.tab-titles');
+    tabTitles.addEventListener('click', function(e) {
+        if (e.target.matches('.tab-titles a')) {
+            handleTabClick(e.target);
+        }
+    });
+
+    tabTitles.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            handleTabClick(document.querySelector('.tab-titles a:focus'));
+        }
+    });
+
+    adjustTabLayout();
+});
+
+window.addEventListener('resize', function() {
+    adjustTabLayout();
+});
+
+function adjustTabLayout() {
+    var tabTitles = document.querySelector('.tab-titles');
+    var tabContents = document.querySelector('.tab-contents');
+    var windowWidth = window.innerWidth;
+
+    if (windowWidth < 768) {
+        tabTitles.style.flexDirection = 'column';
+        tabContents.style.borderTop = '1px solid #ccc';
+    } else {
+        tabTitles.style.flexDirection = 'row';
+        tabContents.style.borderTop = 'none';
+    }
+}
+
+function handleTabClick(tab) {
+    var tabContent = document.querySelector(tab.getAttribute('href'));
+
+    document.querySelectorAll('.tab-contents li').forEach(function(content) {
+        content.classList.remove('active');
+    });
+
+    tabContent.classList.add('active');
+
+    document.querySelectorAll('.tab-titles a').forEach(function(tab) {
+        tab.classList.remove('active');
+    });
+
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+
+    var siblings = getSiblings(tab);
+    siblings.forEach(function(sibling) {
+        sibling.setAttribute('aria-selected', 'false');
+    });
+}
+
+function getSiblings(elem) {
+    var siblings = [];
+    var sibling = elem.parentNode.firstChild;
+
+    while (sibling) {
+        if (sibling.nodeType === 1 && sibling !== elem) {
+            siblings.push(sibling);
+        }
+        sibling = sibling.nextSibling;
+    }
+
+    return siblings;
+}
+
+function showEmail(button) {
+    var container = button.closest('.container');
+    var existingEmail = container.querySelector("#emailDisplay");
+
+    if (existingEmail) {
+        if (existingEmail.style.display === "none") {
+            existingEmail.style.display = "block";
+        } else {
+            existingEmail.style.display = "none";
+        }
+    } else {
+        var emailElement = document.createElement("div");
+        emailElement.id = "emailDisplay";
+        emailElement.textContent = "elmatematicofeliz@gmail.com";
+        emailElement.style.padding = "10px";
+        emailElement.style.backgroundColor = "#f0f0f0";
+        emailElement.style.border = "1px solid #ccc";
+        emailElement.style.textAlign = "center";
+        emailElement.style.cursor = "pointer";
+        emailElement.style.marginTop = "10px";
+        emailElement.style.fontSize = "18px";
+        emailElement.onclick = function() {
+            copyEmail(emailElement.textContent);
+        };
+
+        container.appendChild(emailElement);
+    }
+}
+
+function copyEmail(email) {
+    var tempInput = document.createElement("input");
+    tempInput.value = email;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    alert("Correo electrónico copiado: " + email);
+}
+</script>
+
+<body>
+<div class="tabs">
+  <ul class="tab-titles" role="tablist">
+    <li role="presentation"><a href="#tab1" class="active" role="tab" aria-controls="tab1" aria-selected="true">Inicio</a></li>
+    <li role="presentation"><a href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Equipo</a></li>
+    <li role="presentation"><a href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Servicios</a></li>
+    <li role="presentation"><a href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Precios</a></li>
+    <li role="presentation"><a href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">Testimonios</a></li>
+    <li role="presentation"><a href="#tab6" role="tab" aria-controls="tab6" aria-selected="false">Blog</a></li>
+  </ul>
+  
+  <ul class="tab-contents">
+    <li id="tab1" class="active" role="tabpanel" aria-labelledby="tab1">
+      <h1>Bienvenido a Rinle Matemáticas</h1>
+      <h2>Soluciones Matemáticas a tu Alcance</h2>
+      <p>
+        En Rinle Matemáticas, estamos dedicados a hacer que el mundo de las matemáticas sea accesible y comprensible para todos. Con años de experiencia en la resolución de problemas matemáticos de diversas complejidades, ofrecemos un servicio personalizado que se adapta a tus necesidades específicas. Ya seas estudiante, profesional o simplemente alguien que busca aclarar conceptos matemáticos, ¡estás en el lugar correcto!
+      </p>
+
+      <h2>¿Qué Ofrecemos?</h2>
+
+      <div class="list-item">
+        <div class="dot-container">
+          <span class="dot"></span>
+        </div>
+        <span class="text">Resolución de Problemas: Desde álgebra básica hasta cálculo avanzado, estamos aquí para ayudarte a superar cualquier desafío matemático.</span>
+      </div>
+      <div class="list-item">
+        <div class="dot-container">
+          <span class="dot"></span>
+        </div>
+        <span class="text">Asesoría Personalizada: Nos tomamos el tiempo para entender tus necesidades y ofrecerte soluciones a medida.</span>
+      </div>
+      <div class="list-item">
+        <div class="dot-container">
+          <span class="dot"></span>
+        </div>
+        <span class="text">Recursos Educativos: Accede a una variedad de materiales que te ayudarán a mejorar tus habilidades matemáticas.</span>
+      </div>
+
+      <h2>¿Por Qué Elegirnos?</h2>
+
+      <div class="list-item">
+        <div class="dot-container">
+          <span class="dot"></span>
+        </div>
+        <span class="text">Experiencia Comprobada: Con un historial de éxito en la enseñanza y resolución de problemas, garantizamos resultados efectivos.</span>
+      </div>
+      <div class="list-item">
+        <div class="dot-container">
+          <span class="dot"></span>
+        </div>
+        <span class="text">Enfoque Amigable: Creemos que las matemáticas no tienen por qué ser intimidantes. Nuestro enfoque es amigable y accesible, lo que facilita el aprendizaje.</span>
+      </div>
+      <div class="list-item">
+        <div class="dot-container">
+          <span class="dot"></span>
+        </div>
+        <span class="text">Compromiso con la Excelencia: Nos apasiona ayudar a nuestros clientes a alcanzar sus objetivos matemáticos. Tu éxito es nuestra prioridad.</span>
+      </div>
+
+      <h2>¡Comienza Hoy!</h2>
+
+      <p class="texto">
+        ¿Listo para resolver ese problema matemático que te ha estado desafiando? Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus metas. 
+      </p>
+      <div class="container">
+        <a href="#" class="donation-button" onclick="showEmail(this); return false;">Contáctanos</a>
+      </div>
+    </li>
+
+
+    <li id="tab2" role="tabpanel" aria-labelledby="tab2">
+  <h1>Sobre Nosotros</h1>
+  <h2>Un Equipo de Expertos en Matemáticas a Tu Servicio</h2>
+  <p>
+    En Rinle, somos un grupo de apasionados matemáticos dedicados a ofrecer soluciones efectivas y personalizadas para todos tus desafíos matemáticos. Con una combinación de experiencia académica y práctica, nuestro equipo está compuesto por profesionales con diversas especialidades en el vasto campo de las matemáticas.
+  </p>
+
+  <h2>Nuestra Misión</h2>
+  <p>
+    Nuestra misión es desmitificar las matemáticas y hacer que sean accesibles para todos. Creemos que cada persona tiene el potencial de comprender y aplicar conceptos matemáticos, y estamos aquí para guiarlos en ese viaje. Nos esforzamos por proporcionar un ambiente de aprendizaje positivo y estimulante, donde cada cliente se sienta apoyado y motivado.
+  </p>
+
+  <h2>Nuestra Visión</h2>
+  <p>
+    Aspiramos a ser la referencia en asesoría matemática, reconocidos por nuestra excelencia en la enseñanza y resolución de problemas. Queremos empoderar a estudiantes, profesionales y entusiastas de las matemáticas, ayudándoles a alcanzar sus metas académicas y profesionales.
+  </p>
+
+  <h2>Nuestro Equipo</h2>
+  <p>
+    Cada miembro de nuestro equipo trae consigo una rica experiencia en diversas áreas de las matemáticas, incluyendo:
+  </p>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Álgebra y Geometría</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Cálculo y Análisis</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Estadística y Probabilidad</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Matemáticas Aplicadas y Teóricas</span>
+  </div>
+  <p>
+    Nos unimos para ofrecerte un enfoque colaborativo, donde combinamos nuestras habilidades y conocimientos para brindarte las mejores soluciones posibles.
+  </p>
+
+  <h2>¿Por Qué Elegirnos?</h2>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Experiencia Colectiva: Con múltiples expertos en nuestro equipo, garantizamos una amplia gama de conocimientos y habilidades.</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Enfoque Personalizado: Nos tomamos el tiempo para entender tus necesidades específicas y adaptamos nuestras soluciones a ti.</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Compromiso con el Aprendizaje: No solo resolvemos problemas, sino que también te enseñamos a comprender y aplicar conceptos matemáticos de manera efectiva.</span>
+  </div>
+
+  <div class="container">
+    <a href="#" class="donation-button" onclick="showEmail(this); return false;">¡Conócenos!</a>
+  </div>
+
+  <p>
+    Estamos emocionados de acompañarte en tu viaje matemático. Si tienes preguntas o necesitas asistencia, no dudes en contactarnos. ¡Estamos aquí para ayudarte!
+  </p>
+</li>
+
+<li id="tab3" role="tabpanel" aria-labelledby="tab3">
+  <h1>Nuestros Servicios</h1>
+  <p>
+    En Rinle, ofrecemos una amplia gama de servicios matemáticos para satisfacer todas tus necesidades. Nuestro equipo de expertos está listo para ayudarte a superar cualquier desafío matemático que enfrentes.
+  </p>
+
+  <h2>Resolución de Problemas</h2>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Álgebra</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Geometría</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Trigonometría</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Cálculo</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Ecuaciones Diferenciales</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Álgebra Lineal</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Estadística y Probabilidad</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Matemáticas Discretas</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Teoría de Números</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Combinatoria</span>
+  </div>
+
+  <p>
+    Nuestros expertos están capacitados para resolver problemas de complejidad variable en todas estas áreas. Ya seas un estudiante luchando con una tarea o un profesional enfrentando un reto en el trabajo, ¡estamos aquí para ayudarte!
+  </p>
+
+  <h2>Asesoría y Tutorías</h2>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Sesiones de asesoría personalizadas</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Tutorías en línea o presenciales</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Preparación para exámenes y pruebas</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Desarrollo de habilidades matemáticas</span>
+  </div>
+
+  <p>
+    Entendemos que cada persona aprende de manera diferente. Por eso, adaptamos nuestro enfoque a tus preferencias y estilos de aprendizaje. Nuestros tutores expertos te guiarán paso a paso, asegurándose de que comprendas los conceptos en profundidad.
+  </p>
+
+  <h2>Recursos Educativos</h2>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Guías y manuales de estudio</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Hojas de práctica y ejercicios</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Explicaciones en video</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Asesoramiento sobre técnicas de estudio</span>
+  </div>
+
+  <p>
+    Además de resolver problemas y brindar asesoría, también nos enfocamos en ayudarte a desarrollar tus propias habilidades matemáticas. Nuestros recursos educativos están diseñados para complementar tu aprendizaje y convertirte en un experto independiente.
+  </p>
+
+  <h2>Proyectos de Investigación</h2>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Asistencia en proyectos de investigación</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Análisis de datos y estadísticas</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Modelado matemático</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Simulaciones y visualizaciones</span>
+  </div>
+
+  <p>
+    Si estás involucrado en un proyecto de investigación que requiere conocimientos matemáticos avanzados, ¡contamos con el equipo perfecto para ayudarte! Trabajaremos contigo para diseñar estrategias, analizar datos y presentar resultados de manera clara y convincente.
+  </p>
+
+  <h2>Consultoría Empresarial</h2>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Análisis de datos y predicciones</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Optimización de procesos</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Gestión de riesgos</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Toma de decisiones basada en datos</span>
+  </div>
+
+  <p>
+    Las matemáticas desempeñan un papel crucial en el mundo empresarial. Nuestros expertos pueden ayudarte a aprovechar al máximo tus datos, optimizar tus operaciones y tomar decisiones informadas que impulsen el éxito de tu negocio.
+  </p>
+
+  <h2>Servicios Personalizados</h2>
+  <p>
+    Si no ves tu necesidad específica en la lista anterior, no te preocupes. Estamos listos para diseñar servicios personalizados que se adapten perfectamente a tus requisitos únicos. ¡Contáctanos y trabajaremos juntos para encontrar la solución ideal!
+  </p>
+</li>
+
+<li id="tab4" role="tabpanel" aria-labelledby="tab4">
+  <h1>Nuestros Precios</h1>
+  <p>
+    En Rinle, ofrecemos paquetes de servicios matemáticos a precios competitivos y transparentes. Elige el plan que mejor se adapte a tus necesidades y presupuesto.
+  </p>
+
+  <h2>Plan Básico</h2>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Resolución de hasta 5 problemas matemáticos por mes</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Acceso a recursos educativos básicos</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Soporte por correo electrónico</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">1 mes de garantía</span>
+  </div>
+
+  <h4>Precio: $29/mes</h4>
+
+  <h2>Plan Estándar</h2>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Resolución de hasta 10 problemas matemáticos por mes</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Asesoría personalizada por video llamada</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Acceso a recursos educativos premium</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Soporte prioritario por correo electrónico y chat</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">3 meses de garantía</span>
+  </div>
+
+  <h4>Precio: $49/mes</h4>
+
+  <h2>Plan Premium</h2>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Resolución de hasta 23 problemas matemáticos por mes</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Asesoría personalizada por video llamada</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Tutorías en línea semanales</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Acceso completo a recursos educativos</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Soporte prioritario por correo electrónico, chat y teléfono</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">6 meses de garantía</span>
+  </div>
+
+  <h4>Precio: $99/mes</h4>
+
+  <h2>Servicios Adicionales</h2>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Asesoría matemática por hora: $50/hora</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Tutoría matemática por hora: $75/hora</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Análisis de datos y estadísticas: $100/proyecto</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Consultoría empresarial: Cotización personalizada</span>
+  </div>
+
+  <h2>Descuentos Especiales</h2>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Estudiantes y académicos: 10% de descuento</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Grupos de 3 o más: 15% de descuento</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Suscripción anual: 20% de descuento</span>
+  </div>
+
+  <h2>Todos nuestros planes incluyen:</h2>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Resolución de problemas por expertos matemáticos</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Explicaciones detalladas y personalizadas</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Acceso a la plataforma en línea las 24 horas</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Garantía de satisfacción</span>
+  </div>
+
+  <p>
+    ¿Listo para llevar tus habilidades matemáticas al siguiente nivel? ¡Elige tu plan y comienza ahora mismo!
+  </p>
+
+  <div class="container">
+    <a href="#" class="donation-button" onclick="showEmail(this); return false;">Suscribirme</a>
+  </div>
+</li>
+
+<li id="tab5" role="tabpanel" aria-labelledby="tab5">
+  <h1>Testimonios</h1>
+
+  <p>En Rinle, nos enorgullece ayudar a nuestros clientes a alcanzar sus metas matemáticas. Aquí tienes algunas opiniones de personas que han confiado en nosotros:</p>
+
+  <h3>María López, Estudiante de Ingeniería</h3>
+  <p>"Gracias a Rinle, pude entender conceptos de cálculo que antes me parecían imposibles. La atención personalizada y las explicaciones claras hicieron toda la diferencia. ¡Logré aprobar mi examen final con una calificación excelente!"</p>
+
+  <h3>Juan Pérez, Profesional en Finanzas</h3>
+  <p>"El equipo de Rinle me ayudó a analizar datos complejos para mi proyecto de investigación. Su enfoque profesional y su conocimiento profundo de las matemáticas me permitieron presentar resultados sólidos y bien fundamentados. ¡Recomiendo sus servicios sin dudar!"</p>
+
+  <h3>Ana García, Madre de un Estudiante</h3>
+  <p>"Mi hijo estaba luchando con sus clases de matemáticas, pero después de unas sesiones con Rinle, su confianza y habilidades mejoraron notablemente. Ahora disfruta aprender matemáticas y ha subido sus calificaciones. ¡Estoy muy agradecida!"</p>
+
+  <h3>Carlos Rodríguez, Emprendedor</h3>
+  <p>"Contraté a Rinle para optimizar los procesos de mi negocio. Su análisis matemático fue fundamental para tomar decisiones informadas y mejorar la eficiencia. Su equipo es increíblemente profesional y siempre está dispuesto a ayudar."</p>
+
+  <h3>Laura Martínez, Estudiante de Secundaria</h3>
+  <p>"Las tutorías en línea han sido una experiencia maravillosa. Los tutores son muy pacientes y explican todo de manera sencilla. Gracias a ellos, he mejorado mucho en mis tareas y exámenes. ¡Definitivamente seguiré trabajando con ellos!"</p>
+
+  <h2>Testimonio Destacado</h2>
+  <p>"La mejor decisión que tomé fue contactar a Rinle. No solo resolvieron mis problemas, sino que también me enseñaron a pensar de manera crítica y a abordar las matemáticas con confianza. ¡Los recomiendo a todos!"</p>
+  <h3>Fernando Silva, Estudiante de Matemáticas</h3>
+</li>
+
+<li id="tab6" role="tabpanel" aria-labelledby="tab6">
+  <h1>Blog de Rinle</h1>
+
+  <p>Bienvenido a nuestro blog, un espacio dedicado a explorar el fascinante mundo de las matemáticas. Aquí encontrarás artículos, guías y recursos diseñados para ayudarte a comprender mejor conceptos matemáticos, resolver problemas y mejorar tus habilidades.</p>
+
+  <h2>Últimos Artículos</h2>
+
+  <h3>1. Las Matemáticas en la Vida Cotidiana</h3>
+  <p>Descubre cómo las matemáticas influyen en nuestras decisiones diarias, desde la gestión del presupuesto personal hasta la planificación de viajes. Aprenderás a ver las matemáticas como una herramienta útil en lugar de un obstáculo.</p>
+
+  <h3>2. Consejos para Estudiar Matemáticas Efectivamente</h3>
+  <p>Te compartimos estrategias y técnicas que te ayudarán a estudiar matemáticas de manera más eficiente. Desde la organización del tiempo hasta el uso de recursos en línea, este artículo es ideal para estudiantes de todos los niveles.</p>
+
+  <h3>3. Entendiendo el Cálculo: Conceptos Clave</h3>
+  <p>Un desglose de los conceptos fundamentales del cálculo, incluyendo límites, derivadas e integrales. Este artículo es perfecto para quienes se inician en esta área o necesitan un repaso.</p>
+
+  <h3>4. Matemáticas y Tecnología: Una Relación Inquebrantable</h3>
+  <p>Explora cómo las matemáticas son la base de muchas tecnologías modernas, desde algoritmos de búsqueda hasta inteligencia artificial. Este artículo te mostrará la importancia de las matemáticas en el mundo tecnológico actual.</p>
+
+  <h3>5. Desmitificando la Estadística: Lo Que Necesitas Saber</h3>
+  <p>Una guía para entender los conceptos básicos de la estadística, incluyendo medias, medianas y desviaciones estándar. Aprenderás cómo aplicar estos conceptos en la vida real y en la investigación.</p>
+
+  <h2>Recursos Adicionales</h2>
+
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Infografías: Visualiza conceptos matemáticos complejos de manera sencilla.</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Videos Tutoriales: Accede a lecciones en video que explican diferentes temas matemáticos.</span>
+  </div>
+  <div class="list-item">
+    <div class="dot-container">
+      <span class="dot"></span>
+    </div>
+    <span class="text">Ejercicios Prácticos: Descarga hojas de ejercicios para practicar lo que has aprendido.</span>
+  </div>
+
+  <h2>Únete a la Conversación</h2>
+
+  <p>Nos encantaría escuchar tus pensamientos y preguntas sobre los temas que tratamos. Deja un comentario de nuestros artículos o contáctanos directamente para estar al tanto de nuestras últimas publicaciones y recursos.</p>
+
+  <div class="container">
+    <a href="#" class="donation-button" onclick="showEmail(this); return false;">Suscríbete</a>
+  </div>
+
+  <p>No te pierdas ninguna actualización. Suscríbete a nuestro boletín y recibe los últimos artículos directamente en tu bandeja de entrada. ¡Mantente al día con el mundo de las matemáticas!</p>
+</li>
+  </ul>
+</div>
+
+</body>
+</html>
